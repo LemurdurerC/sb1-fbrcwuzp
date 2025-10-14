@@ -41,21 +41,15 @@ const RSVP = () => {
     addDebug('Démarrage de la soumission...');
 
     try {
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://uurydcoxbcewzafbojru.supabase.co';
-      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cnlkY294YmNld3phZmJvanJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk5Mzk4MTgsImV4cCI6MjA3NTUxNTgxOH0.H_x2kJ9tBSfzO4sBbW-T9Pufil1Ew0hh3R64_ElTou8';
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      addDebug(`API URL: ${apiUrl}`);
 
-      addDebug(`Config OK: URL et Key présentes`);
+      addDebug('Envoi vers MySQL...');
 
-      addDebug('Envoi vers Supabase...');
-
-      const apiUrl = `${supabaseUrl}/functions/v1/rsvp`;
-      addDebug(`URL: ${apiUrl}`);
-
-      const response = await fetch(apiUrl, {
+      const response = await fetch(`${apiUrl}/api/rsvp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'apikey': supabaseKey,
         },
         body: JSON.stringify({
           name: formData.name,
@@ -121,11 +115,11 @@ const RSVP = () => {
 
   const loadRSVPData = async () => {
     try {
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://uurydcoxbcewzafbojru.supabase.co';
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
       // Try to load from server
       try {
-        const response = await fetch(`${supabaseUrl}/functions/v1/rsvp`, {
+        const response = await fetch(`${apiUrl}/api/rsvp`, {
           method: 'GET',
           headers: {
             'X-Admin-Password': 'AdminSimonTalia2026',
@@ -336,11 +330,6 @@ const RSVP = () => {
                 <p className="text-gray-500 text-lg">Aucune réponse pour le moment</p>
                 <p className="text-gray-400 text-sm mt-2">
                   Les réponses apparaîtront ici une fois que les invités auront rempli le formulaire
-                  {!import.meta.env.VITE_SUPABASE_URL && (
-                    <span className="block mt-2 text-orange-500">
-                      ⚠️ Supabase non configuré - Données sauvegardées localement
-                    </span>
-                  )}
                 </p>
               </div>
             ) : (
