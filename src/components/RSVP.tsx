@@ -41,15 +41,19 @@ const RSVP = () => {
     addDebug('Démarrage de la soumission...');
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-      addDebug(`API URL: ${apiUrl}`);
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://uurydcoxbcewzafbojru.supabase.co';
+      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1cnlkY294YmNld3phZmJvanJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk5Mzk4MTgsImV4cCI6MjA3NTUxNTgxOH0.H_x2kJ9tBSfzO4sBbW-T9Pufil1Ew0hh3R64_ElTou8';
 
-      addDebug('Envoi vers MySQL...');
+      addDebug('Envoi vers MySQL via Supabase Edge Function...');
 
-      const response = await fetch(`${apiUrl}/api/rsvp`, {
+      const apiUrl = `${supabaseUrl}/functions/v1/rsvp-mysql`;
+      addDebug(`URL: ${apiUrl}`);
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'apikey': supabaseKey,
         },
         body: JSON.stringify({
           name: formData.name,
@@ -115,11 +119,11 @@ const RSVP = () => {
 
   const loadRSVPData = async () => {
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://uurydcoxbcewzafbojru.supabase.co';
 
       // Try to load from server
       try {
-        const response = await fetch(`${apiUrl}/api/rsvp`, {
+        const response = await fetch(`${supabaseUrl}/functions/v1/rsvp-mysql`, {
           method: 'GET',
           headers: {
             'X-Admin-Password': 'AdminSimonTalia2026',
