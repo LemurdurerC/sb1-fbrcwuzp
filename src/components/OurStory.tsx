@@ -47,7 +47,7 @@ const OurStory = () => {
                 <div 
                   className="absolute inset-0 bg-no-repeat bg-center"
                   style={{
-                    backgroundImage: 'url("https://www.noelshack.com/2025-42-4-1760573157-map-1.png")',
+                    backgroundImage: 'url("https://i.postimg.cc/t4wybcyb/map-1.png")',
                     backgroundSize: '180%',
                     backgroundPosition: '80% 15%',
                   }}
