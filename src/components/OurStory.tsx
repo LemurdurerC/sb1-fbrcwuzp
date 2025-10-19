@@ -44,12 +44,12 @@ const OurStory = () => {
               {/* World Map Background */}
               <div className="relative w-full aspect-[3/2] max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden">
                 {/* Fixed background map */}
-                <div 
+                <div
                   className="absolute inset-0 bg-no-repeat bg-center"
                   style={{
-                    backgroundImage: 'url("https://i.postimg.cc/t4wybcyb/map-1.png")',
-                    backgroundSize: '180%',
-                    backgroundPosition: '80% 15%',
+                    backgroundImage: 'url("/src/components/map.svg")',
+                    backgroundSize: 'contain',
+                    backgroundPosition: 'center',
                   }}
                 >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-green-50/30"></div>
