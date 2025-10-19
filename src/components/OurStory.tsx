@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, MapPin, Camera } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import mapSvg from './map.svg';
 
 const OurStory = () => {
   const { t } = useLanguage();
@@ -47,7 +48,7 @@ const OurStory = () => {
                 <div
                   className="absolute inset-0 bg-no-repeat bg-center"
                   style={{
-                    backgroundImage: 'url("/src/components/map.svg")',
+                    backgroundImage: `url(${mapSvg})`,
                     backgroundSize: 'contain',
                     backgroundPosition: 'center',
                   }}
