@@ -99,38 +99,55 @@ const OurStory = () => {
                       </div>
                     )}
 
-                    {/* Mobile Image Display */}
+                    {/* Mobile Image Display - Full Screen */}
                     {hoveredCountry === country.code && (
-                      <div className="fixed inset-x-4 top-1/2 transform -translate-y-1/2 z-50 sm:hidden">
-                        <div className="bg-white rounded-2xl shadow-2xl p-4 border border-gray-100 max-w-sm mx-auto">
-                          <div className="w-full h-32 bg-gradient-to-br from-purple-100 to-rose-100 rounded-xl mb-3 overflow-hidden">
+                      <div className="fixed inset-0 z-50 sm:hidden flex items-center justify-center p-4">
+                        <div
+                          className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+                          onClick={() => setHoveredCountry(null)}
+                        ></div>
+                        <div className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-hidden">
+                          <button
+                            onClick={() => setHoveredCountry(null)}
+                            className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 shadow-lg transition-all duration-200 text-2xl font-light"
+                          >
+                            ×
+                          </button>
+                          <div className="w-full h-64 bg-gradient-to-br from-purple-200 via-rose-200 to-orange-200 overflow-hidden relative">
                             <img
                               src={country.image}
                               alt={country.name}
                               className="w-full h-full object-cover"
                               loading="eager"
+                              onLoad={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.opacity = '1';
+                              }}
+                              style={{ opacity: 0, transition: 'opacity 0.3s' }}
                               onError={(e) => {
                                 const target = e.target as HTMLImageElement;
                                 target.style.display = 'none';
+                                const parent = target.parentElement;
+                                if (parent) {
+                                  const icon = document.createElement('div');
+                                  icon.innerHTML = '📸';
+                                  icon.className = 'absolute inset-0 flex items-center justify-center text-6xl';
+                                  parent.appendChild(icon);
+                                }
                               }}
                             />
                           </div>
-                          <h4 className="font-bold text-gray-800 text-center text-lg mb-2">{country.name}</h4>
-                          <div className="flex items-center justify-center">
-                            <Camera className="w-4 h-4 text-purple-400 mr-2" />
-                            <span className="text-sm text-gray-500">Souvenir de voyage</span>
+                          <div className="p-6">
+                            <h3 className="text-2xl font-bold text-gray-800 text-center mb-3">{country.name}</h3>
+                            <div className="flex items-center justify-center text-purple-500">
+                              <Camera className="w-5 h-5 mr-2" />
+                              <span className="text-base">Souvenir de voyage</span>
+                            </div>
+                            <p className="text-center text-gray-500 text-sm mt-4">
+                              Touchez en dehors pour fermer
+                            </p>
                           </div>
-                          <button
-                            onClick={() => setHoveredCountry(null)}
-                            className="absolute top-2 right-2 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 transition-colors duration-200"
-                          >
-                            ×
-                          </button>
                         </div>
-                        <div
-                          className="fixed inset-0 bg-black/20 -z-10"
-                          onClick={() => setHoveredCountry(null)}
-                        ></div>
                       </div>
                     )}
                   </div>
