@@ -77,11 +77,18 @@ const OurStory = () => {
                     {hoveredCountry === country.code && (
                       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 hidden sm:block">
                         <div className="bg-white rounded-lg shadow-xl p-3 sm:p-4 min-w-32 sm:min-w-48 border border-gray-100">
-                          <img
-                            src={country.image}
-                            alt={country.name}
-                            className="w-full h-16 sm:h-24 object-cover rounded-lg mb-2 sm:mb-3"
-                          />
+                          <div className="w-full h-16 sm:h-24 bg-gradient-to-br from-purple-100 to-rose-100 rounded-lg mb-2 sm:mb-3 overflow-hidden">
+                            <img
+                              src={country.image}
+                              alt={country.name}
+                              className="w-full h-full object-cover"
+                              loading="eager"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
+                            />
+                          </div>
                           <h4 className="font-bold text-gray-800 text-center text-sm sm:text-base">{country.name}</h4>
                           <div className="flex items-center justify-center mt-2">
                             <Camera className="w-4 h-4 text-purple-400 mr-1" />
@@ -96,11 +103,18 @@ const OurStory = () => {
                     {hoveredCountry === country.code && (
                       <div className="fixed inset-x-4 top-1/2 transform -translate-y-1/2 z-50 sm:hidden">
                         <div className="bg-white rounded-2xl shadow-2xl p-4 border border-gray-100 max-w-sm mx-auto">
-                          <img
-                            src={country.image}
-                            alt={country.name}
-                            className="w-full h-32 object-cover rounded-xl mb-3"
-                          />
+                          <div className="w-full h-32 bg-gradient-to-br from-purple-100 to-rose-100 rounded-xl mb-3 overflow-hidden">
+                            <img
+                              src={country.image}
+                              alt={country.name}
+                              className="w-full h-full object-cover"
+                              loading="eager"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
+                            />
+                          </div>
                           <h4 className="font-bold text-gray-800 text-center text-lg mb-2">{country.name}</h4>
                           <div className="flex items-center justify-center">
                             <Camera className="w-4 h-4 text-purple-400 mr-2" />
@@ -113,7 +127,7 @@ const OurStory = () => {
                             ×
                           </button>
                         </div>
-                        <div 
+                        <div
                           className="fixed inset-0 bg-black/20 -z-10"
                           onClick={() => setHoveredCountry(null)}
                         ></div>
