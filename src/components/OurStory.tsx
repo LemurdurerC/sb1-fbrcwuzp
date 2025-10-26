@@ -99,51 +99,34 @@ const OurStory = () => {
                       </div>
                     )}
 
-                    {/* Mobile Image Display - Full Screen */}
+                    {/* Mobile Display - Full Screen */}
                     {hoveredCountry === country.code && (
                       <div className="fixed inset-0 z-50 sm:hidden flex items-center justify-center p-4">
                         <div
                           className="absolute inset-0 bg-black/70 backdrop-blur-sm"
                           onClick={() => setHoveredCountry(null)}
                         ></div>
-                        <div className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-hidden">
+                        <div className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden animate-in fade-in zoom-in duration-300">
                           <button
                             onClick={() => setHoveredCountry(null)}
                             className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 shadow-lg transition-all duration-200 text-2xl font-light"
                           >
                             ×
                           </button>
-                          <div className="w-full h-64 bg-gradient-to-br from-purple-200 via-rose-200 to-orange-200 overflow-hidden relative">
-                            <img
-                              src={country.image}
-                              alt={country.name}
-                              className="w-full h-full object-cover"
-                              loading="eager"
-                              onLoad={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.style.opacity = '1';
-                              }}
-                              style={{ opacity: 0, transition: 'opacity 0.3s' }}
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.style.display = 'none';
-                                const parent = target.parentElement;
-                                if (parent) {
-                                  const icon = document.createElement('div');
-                                  icon.innerHTML = '📸';
-                                  icon.className = 'absolute inset-0 flex items-center justify-center text-6xl';
-                                  parent.appendChild(icon);
-                                }
-                              }}
-                            />
+                          <div className="w-full h-64 bg-gradient-to-br from-purple-200 via-rose-200 to-orange-200 overflow-hidden relative flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="text-9xl mb-2">{country.flag}</div>
+                              <div className="text-7xl">{country.landmark}</div>
+                            </div>
                           </div>
                           <div className="p-6">
-                            <h3 className="text-2xl font-bold text-gray-800 text-center mb-3">{country.name}</h3>
+                            <h3 className="text-2xl font-bold text-gray-800 text-center mb-2">{country.name}</h3>
+                            <p className="text-base text-gray-600 text-center mb-4">{country.description}</p>
                             <div className="flex items-center justify-center text-purple-500">
                               <Camera className="w-5 h-5 mr-2" />
                               <span className="text-base">Souvenir de voyage</span>
                             </div>
-                            <p className="text-center text-gray-500 text-sm mt-4">
+                            <p className="text-center text-gray-400 text-sm mt-4">
                               Touchez en dehors pour fermer
                             </p>
                           </div>
