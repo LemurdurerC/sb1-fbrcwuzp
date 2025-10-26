@@ -64,10 +64,11 @@ const OurStory = () => {
                     style={{ left: `${country.x}%`, top: `${country.y}%` }}
                     onMouseEnter={() => setHoveredCountry(country.code)}
                     onMouseLeave={() => setHoveredCountry(null)}
+                    onClick={() => setHoveredCountry(hoveredCountry === country.code ? null : country.code)}
                   >
                     <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
-                      hoveredCountry === country.code 
-                        ? 'bg-rose-500 scale-150 shadow-lg' 
+                      hoveredCountry === country.code
+                        ? 'bg-rose-500 scale-150 shadow-lg'
                         : 'bg-purple-400 hover:bg-rose-400 hover:scale-125'
                     }`}>
                       <div className="absolute inset-0 rounded-full animate-ping bg-rose-400 opacity-20"></div>
@@ -101,34 +102,57 @@ const OurStory = () => {
 
                     {/* Mobile Display - Full Screen */}
                     {hoveredCountry === country.code && (
-                      <div className="fixed inset-0 z-50 sm:hidden flex items-center justify-center p-4">
+                      <div
+                        className="fixed inset-0 z-50 sm:hidden flex items-center justify-center p-4"
+                        onClick={(e) => {
+                          if (e.target === e.currentTarget) {
+                            setHoveredCountry(null);
+                          }
+                        }}
+                      >
+                        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
                         <div
-                          className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-                          onClick={() => setHoveredCountry(null)}
-                        ></div>
-                        <div className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden animate-in fade-in zoom-in duration-300">
+                          className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <button
                             onClick={() => setHoveredCountry(null)}
                             className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 shadow-lg transition-all duration-200 text-2xl font-light"
                           >
                             ×
                           </button>
-                          <div className="w-full h-64 bg-gradient-to-br from-purple-200 via-rose-200 to-orange-200 overflow-hidden relative flex items-center justify-center">
-                            <div className="text-center">
-                              <div className="text-9xl mb-2">{country.flag}</div>
-                              <div className="text-7xl">{country.landmark}</div>
-                            </div>
+                          <div className="w-full h-64 bg-gradient-to-br from-purple-100 via-rose-100 to-orange-100 overflow-hidden relative">
+                            <img
+                              src={country.image}
+                              alt={country.name}
+                              className="w-full h-full object-cover"
+                              loading="eager"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                                const parent = target.parentElement;
+                                if (parent && !parent.querySelector('.fallback-emoji')) {
+                                  const fallback = document.createElement('div');
+                                  fallback.className = 'fallback-emoji absolute inset-0 flex items-center justify-center flex-col';
+                                  fallback.innerHTML = `<div class="text-7xl mb-2">${country.flag}</div><div class="text-5xl">${country.landmark}</div>`;
+                                  parent.appendChild(fallback);
+                                }
+                              }}
+                            />
                           </div>
                           <div className="p-6">
                             <h3 className="text-2xl font-bold text-gray-800 text-center mb-2">{country.name}</h3>
                             <p className="text-base text-gray-600 text-center mb-4">{country.description}</p>
-                            <div className="flex items-center justify-center text-purple-500">
+                            <div className="flex items-center justify-center text-purple-500 mb-4">
                               <Camera className="w-5 h-5 mr-2" />
                               <span className="text-base">Souvenir de voyage</span>
                             </div>
-                            <p className="text-center text-gray-400 text-sm mt-4">
-                              Touchez en dehors pour fermer
-                            </p>
+                            <button
+                              onClick={() => setHoveredCountry(null)}
+                              className="w-full bg-gradient-to-r from-purple-500 to-rose-500 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                            >
+                              Fermer
+                            </button>
                           </div>
                         </div>
                       </div>
