@@ -8,14 +8,76 @@ const OurStory = () => {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
   const countries = [
-    { code: 'FR', name: 'France', x: 23, y: 43, image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
-   { code: 'IE', name: 'Ireland', x: 18, y: 38, image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
-    { code: 'UK', name: 'United Kingdom', x: 21, y: 38, image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
-    { code: 'ES', name: 'Spain', x: 20, y: 50, image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
-    { code: 'DE', name: 'Germany', x: 27, y: 39, image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
-    { code: 'IT', name: 'Italy', x: 27, y: 45, image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
-    { code: 'JP', name: 'Japan', x: 92, y: 45, image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
-    
+    {
+      code: 'FR',
+      name: 'France',
+      x: 23,
+      y: 43,
+      image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      flag: '🇫🇷',
+      landmark: '🗼',
+      description: 'La ville lumière et ses monuments emblématiques'
+    },
+    {
+      code: 'IE',
+      name: 'Ireland',
+      x: 18,
+      y: 38,
+      image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      flag: '🇮🇪',
+      landmark: '☘️',
+      description: 'Les paysages verts et la culture irlandaise'
+    },
+    {
+      code: 'UK',
+      name: 'United Kingdom',
+      x: 21,
+      y: 38,
+      image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      flag: '🇬🇧',
+      landmark: '🏰',
+      description: 'Histoire, culture et charme britannique'
+    },
+    {
+      code: 'ES',
+      name: 'Spain',
+      x: 20,
+      y: 50,
+      image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      flag: '🇪🇸',
+      landmark: '🏛️',
+      description: 'Soleil, architecture et saveurs espagnoles'
+    },
+    {
+      code: 'DE',
+      name: 'Germany',
+      x: 27,
+      y: 39,
+      image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      flag: '🇩🇪',
+      landmark: '🏰',
+      description: 'Châteaux médiévaux et culture allemande'
+    },
+    {
+      code: 'IT',
+      name: 'Italy',
+      x: 27,
+      y: 45,
+      image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      flag: '🇮🇹',
+      landmark: '🍕',
+      description: 'Art, histoire et gastronomie italienne'
+    },
+    {
+      code: 'JP',
+      name: 'Japan',
+      x: 92,
+      y: 45,
+      image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      flag: '🇯🇵',
+      landmark: '🗻',
+      description: 'Tradition japonaise et modernité'
+    },
   ];
 
   return (
@@ -121,23 +183,25 @@ const OurStory = () => {
                           >
                             ×
                           </button>
-                          <div className="w-full h-64 bg-gradient-to-br from-purple-100 via-rose-100 to-orange-100 overflow-hidden relative">
+                          <div className="w-full h-72 bg-gradient-to-br from-purple-100 via-rose-100 to-orange-100 overflow-hidden relative">
+                            <div className="fallback-emoji absolute inset-0 flex items-center justify-center flex-col">
+                              <div className="text-7xl mb-2">{country.flag}</div>
+                              <div className="text-5xl">{country.landmark}</div>
+                            </div>
                             <img
                               src={country.image}
                               alt={country.name}
-                              className="w-full h-full object-cover"
+                              className="absolute inset-0 w-full h-full object-cover"
                               loading="eager"
-                              onError={(e) => {
+                              onLoad={(e) => {
                                 const target = e.target as HTMLImageElement;
-                                target.style.display = 'none';
-                                const parent = target.parentElement;
-                                if (parent && !parent.querySelector('.fallback-emoji')) {
-                                  const fallback = document.createElement('div');
-                                  fallback.className = 'fallback-emoji absolute inset-0 flex items-center justify-center flex-col';
-                                  fallback.innerHTML = `<div class="text-7xl mb-2">${country.flag}</div><div class="text-5xl">${country.landmark}</div>`;
-                                  parent.appendChild(fallback);
+                                const fallback = target.parentElement?.querySelector('.fallback-emoji');
+                                if (fallback) {
+                                  (fallback as HTMLElement).style.display = 'none';
                                 }
+                                target.style.opacity = '1';
                               }}
+                              style={{ opacity: 0, transition: 'opacity 0.5s' }}
                             />
                           </div>
                           <div className="p-6">
