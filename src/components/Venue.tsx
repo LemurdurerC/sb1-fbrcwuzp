@@ -141,7 +141,7 @@ const Venue = () => {
                 <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                 <div>
                   <p className="font-medium">En train</p>
-                  <p className="text-sm">Gare d'Auxerre (30 min) ou Gare de Montbard (45 min)</p>
+                  <p className="text-sm">Gare d'Auxerre (30 min) ou Gare de Châtel-Censoir (13 mins à pieds)</p>
                 </div>
               </div>
               <div className="flex items-start">
