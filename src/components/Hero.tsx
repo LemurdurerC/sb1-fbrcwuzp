@@ -98,7 +98,7 @@ const Hero = () => {
         <div className="animate-fade-in-delayed">
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent mx-auto mb-6"></div>
           <p className="text-rose-100 italic text-lg">
-            "L'amour ne se voit pas avec les yeux, mais avec le cœur"
+            "Amour n’est qu’un mot, jusqu’à ce que quelqu’un vienne lui donner un sens – Coelho"
           </p>
         </div>
       </div>
