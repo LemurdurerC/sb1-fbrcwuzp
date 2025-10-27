@@ -73,22 +73,10 @@ const Venue = () => {
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                      <span>Château du XVIIe siècle</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
-                      <span>Jardins à la française</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-rose-400 rounded-full mr-2"></span>
-                      <span>Vignobles environnants</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
-                      <span>Parking privé gratuit</span>
-                    </div>
+  
+
+    
+
                   </div>
                 </div>
 
