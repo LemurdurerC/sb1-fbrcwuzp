@@ -22,7 +22,7 @@ const Schedule = () => {
       duration: '45 min',
       description: t('schedule.ceremony.description'),
       icon: Heart,
-      color: 'rose',
+      color: 'red',
       gradient: 'from-rose-400 to-pink-500',
     },
     {
