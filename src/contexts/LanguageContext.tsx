@@ -47,8 +47,8 @@ const translations = {
     'story.wedding.text': 'Nous avons hâte de célébrer notre union entourés de nos proches dans un cadre champêtre et bohème.',
     
     // Schedule
-    'schedule.title': 'Programme du Jour',
-    'schedule.subtitle': 'Votre guide pour cette journée magique',
+    'schedule.title': 'Le Jour J ',
+    'schedule.subtitle': 'Le programme',
     'schedule.opening.title': 'Ouverture & Accueil',
     'schedule.opening.description': 'Arrivée des invités, accueil avec boissons de bienvenue dans les jardins du domaine',
     'schedule.ceremony.title': 'Cérémonie Civile',
