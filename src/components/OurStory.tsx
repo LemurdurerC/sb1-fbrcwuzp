@@ -84,14 +84,14 @@ const OurStory = () => {
     <section id="story" className="py-20 bg-gradient-to-br from-rose-50 via-purple-50 to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            Nos Voyages Ensemble
+          </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-purple-400 mx-auto mt-6 rounded-full"></div>
         </div>
 
         {/* Interactive Map */}
         <div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-            Nos Voyages Ensemble
-          </h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
             Découvrez les pays que nous avons explorés main dans la main
           </p>
