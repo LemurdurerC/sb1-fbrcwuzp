@@ -8,76 +8,14 @@ const OurStory = () => {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
   const countries = [
-    {
-      code: 'FR',
-      name: 'France',
-      x: 23,
-      y: 43,
-      image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇫🇷',
-      landmark: '🗼',
-      description: 'La ville lumière et ses monuments emblématiques'
-    },
-    {
-      code: 'IE',
-      name: 'Ireland',
-      x: 18,
-      y: 38,
-      image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇮🇪',
-      landmark: '☘️',
-      description: 'Les paysages verts et la culture irlandaise'
-    },
-    {
-      code: 'UK',
-      name: 'United Kingdom',
-      x: 21,
-      y: 38,
-      image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇬🇧',
-      landmark: '🏰',
-      description: 'Histoire, culture et charme britannique'
-    },
-    {
-      code: 'ES',
-      name: 'Spain',
-      x: 20,
-      y: 50,
-      image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇪🇸',
-      landmark: '🏛️',
-      description: 'Soleil, architecture et saveurs espagnoles'
-    },
-    {
-      code: 'DE',
-      name: 'Germany',
-      x: 27,
-      y: 39,
-      image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇩🇪',
-      landmark: '🏰',
-      description: 'Châteaux médiévaux et culture allemande'
-    },
-    {
-      code: 'IT',
-      name: 'Italy',
-      x: 27,
-      y: 45,
-      image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇮🇹',
-      landmark: '🍕',
-      description: 'Art, histoire et gastronomie italienne'
-    },
-    {
-      code: 'JP',
-      name: 'Japan',
-      x: 92,
-      y: 45,
-      image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇯🇵',
-      landmark: '🗻',
-      description: 'Tradition japonaise et modernité'
-    },
+    { code: 'FR', name: 'France', x: 23, y: 43, image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
+   { code: 'IE', name: 'Ireland', x: 18, y: 38, image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
+    { code: 'UK', name: 'United Kingdom', x: 21, y: 38, image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
+    { code: 'ES', name: 'Spain', x: 20, y: 50, image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
+    { code: 'DE', name: 'Germany', x: 27, y: 39, image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
+    { code: 'IT', name: 'Italy', x: 27, y: 45, image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
+    { code: 'JP', name: 'Japan', x: 92, y: 45, image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop' },
+    
   ];
 
   return (
@@ -85,13 +23,19 @@ const OurStory = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Nos Voyages Ensemble
+            Notre Histoire
           </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Comment tout a commencé
+          </p>
           <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-purple-400 mx-auto mt-6 rounded-full"></div>
         </div>
 
         {/* Interactive Map */}
         <div>
+          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+            Nos Voyages Ensemble
+          </h3>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
             Découvrez les pays que nous avons explorés main dans la main
           </p>
@@ -120,11 +64,10 @@ const OurStory = () => {
                     style={{ left: `${country.x}%`, top: `${country.y}%` }}
                     onMouseEnter={() => setHoveredCountry(country.code)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    onClick={() => setHoveredCountry(hoveredCountry === country.code ? null : country.code)}
                   >
                     <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
-                      hoveredCountry === country.code
-                        ? 'bg-rose-500 scale-150 shadow-lg'
+                      hoveredCountry === country.code 
+                        ? 'bg-rose-500 scale-150 shadow-lg' 
                         : 'bg-purple-400 hover:bg-rose-400 hover:scale-125'
                     }`}>
                       <div className="absolute inset-0 rounded-full animate-ping bg-rose-400 opacity-20"></div>
@@ -134,18 +77,11 @@ const OurStory = () => {
                     {hoveredCountry === country.code && (
                       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 hidden sm:block">
                         <div className="bg-white rounded-lg shadow-xl p-3 sm:p-4 min-w-32 sm:min-w-48 border border-gray-100">
-                          <div className="w-full h-16 sm:h-24 bg-gradient-to-br from-purple-100 to-rose-100 rounded-lg mb-2 sm:mb-3 overflow-hidden">
-                            <img
-                              src={country.image}
-                              alt={country.name}
-                              className="w-full h-full object-cover"
-                              loading="eager"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.style.display = 'none';
-                              }}
-                            />
-                          </div>
+                          <img
+                            src={country.image}
+                            alt={country.name}
+                            className="w-full h-16 sm:h-24 object-cover rounded-lg mb-2 sm:mb-3"
+                          />
                           <h4 className="font-bold text-gray-800 text-center text-sm sm:text-base">{country.name}</h4>
                           <div className="flex items-center justify-center mt-2">
                             <Camera className="w-4 h-4 text-purple-400 mr-1" />
@@ -156,63 +92,31 @@ const OurStory = () => {
                       </div>
                     )}
 
-                    {/* Mobile Display - Full Screen */}
+                    {/* Mobile Image Display */}
                     {hoveredCountry === country.code && (
-                      <div
-                        className="fixed inset-0 z-50 sm:hidden flex items-center justify-center p-4"
-                        onClick={(e) => {
-                          if (e.target === e.currentTarget) {
-                            setHoveredCountry(null);
-                          }
-                        }}
-                      >
-                        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-                        <div
-                          className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden"
-                          onClick={(e) => e.stopPropagation()}
-                        >
+                      <div className="fixed inset-x-4 top-1/2 transform -translate-y-1/2 z-50 sm:hidden">
+                        <div className="bg-white rounded-2xl shadow-2xl p-4 border border-gray-100 max-w-sm mx-auto">
+                          <img
+                            src={country.image}
+                            alt={country.name}
+                            className="w-full h-32 object-cover rounded-xl mb-3"
+                          />
+                          <h4 className="font-bold text-gray-800 text-center text-lg mb-2">{country.name}</h4>
+                          <div className="flex items-center justify-center">
+                            <Camera className="w-4 h-4 text-purple-400 mr-2" />
+                            <span className="text-sm text-gray-500">Souvenir de voyage</span>
+                          </div>
                           <button
                             onClick={() => setHoveredCountry(null)}
-                            className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-gray-800 shadow-lg transition-all duration-200 text-2xl font-light"
+                            className="absolute top-2 right-2 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600 transition-colors duration-200"
                           >
                             ×
                           </button>
-                          <div className="w-full h-72 bg-gradient-to-br from-purple-100 via-rose-100 to-orange-100 overflow-hidden relative">
-                            <div className="fallback-emoji absolute inset-0 flex items-center justify-center flex-col">
-                              <div className="text-7xl mb-2">{country.flag}</div>
-                              <div className="text-5xl">{country.landmark}</div>
-                            </div>
-                            <img
-                              src={country.image}
-                              alt={country.name}
-                              className="absolute inset-0 w-full h-full object-cover"
-                              loading="eager"
-                              onLoad={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                const fallback = target.parentElement?.querySelector('.fallback-emoji');
-                                if (fallback) {
-                                  (fallback as HTMLElement).style.display = 'none';
-                                }
-                                target.style.opacity = '1';
-                              }}
-                              style={{ opacity: 0, transition: 'opacity 0.5s' }}
-                            />
-                          </div>
-                          <div className="p-6">
-                            <h3 className="text-2xl font-bold text-gray-800 text-center mb-2">{country.name}</h3>
-                            <p className="text-base text-gray-600 text-center mb-4">{country.description}</p>
-                            <div className="flex items-center justify-center text-purple-500 mb-4">
-                              <Camera className="w-5 h-5 mr-2" />
-                              <span className="text-base">Souvenir de voyage</span>
-                            </div>
-                            <button
-                              onClick={() => setHoveredCountry(null)}
-                              className="w-full bg-gradient-to-r from-purple-500 to-rose-500 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
-                            >
-                              Fermer
-                            </button>
-                          </div>
                         </div>
+                        <div 
+                          className="fixed inset-0 bg-black/20 -z-10"
+                          onClick={() => setHoveredCountry(null)}
+                        ></div>
                       </div>
                     )}
                   </div>
@@ -229,8 +133,12 @@ const OurStory = () => {
                 </p>
                 <div className="inline-flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm">
                   <div className="flex items-center">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mr-2"></div>
+                    <span className="text-sm text-gray-600">Destinations</span>
                   </div>
                   <div className="flex items-center">
+                    <div className="w-3 h-3 bg-rose-500 rounded-full mr-2"></div>
+                    <span className="text-sm text-gray-600">Survolé</span>
                   </div>
                 </div>
               </div>

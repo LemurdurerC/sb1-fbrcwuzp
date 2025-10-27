@@ -56,7 +56,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="mb-8 animate-fade-in">
-  
+          <Heart className="w-16 h-16 mx-auto mb-6 text-rose-300 animate-pulse" />
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-wide">
             {t('hero.title')}
           </h1>
@@ -98,7 +98,7 @@ const Hero = () => {
         <div className="animate-fade-in-delayed">
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent mx-auto mb-6"></div>
           <p className="text-rose-100 italic text-lg">
-            "Amour n’est qu’un mot, jusqu’à ce que quelqu’un vienne lui donner un sens – Coelho"
+            "L'amour ne se voit pas avec les yeux, mais avec le cœur"
           </p>
         </div>
       </div>

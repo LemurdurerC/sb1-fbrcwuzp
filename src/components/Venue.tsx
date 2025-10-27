@@ -7,24 +7,36 @@ const Venue = () => {
 
   const hotels = [
     {
-      name: 'La Boule d’Or – Auberge créative',
-      price: '€100-115',
+      name: 'Hôtel du Morvan',
       rating: 4,
-      distance: '16 km du domaine - 17 mins en voiture',
-      link: 'https://www.booking.com/hotel/fr/la-boule-d-39-or-clamecy.en-gb.html?aid=303948&label=merry-sur-yonne-a%2ALgjn5E4J3b2ny89iQspwS294441456633%3Apl%3Ata%3Ap12%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2395719376965%3Akwd-13069270641%3Alp9196363%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9Yf5EcukO1MOGLSSAuId8ToA&sid=fa99be4ac6a3b15b27500150fc850814&all_sr_blocks=1014684006_374021643_0_1_0&checkin=2026-07-11&checkout=2026-07-12&dest_id=-1451103&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1014684006_374021643_0_1_0&hpos=1&matching_block_id=1014684006_374021643_0_1_0&nflt=ht_id%3D1100&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1014684006_374021643_0_1_0__9765&srepoch=1761153813&srpvid=4cfa7a1f2815049d&type=total&ucfs=1&',
+      price: '€95-140',
+      distance: '8 km du domaine',
+      description: 'Hôtel de charme au cœur de la Bourgogne',
+      link: '#',
     },
     {
-      name: 'Les Glycines – Vézelay',
-      price: '€140-170',
-      rating: 4,
-      distance: '17 km du domaine - 20 mins en voiture',
-      link: 'https://www.booking.com/hotel/fr/vezelay-les-glycines.en-gb.html?aid=303948&label=merry-sur-yonne-a%2ALgjn5E4J3b2ny89iQspwS294441456633%3Apl%3Ata%3Ap12%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2395719376965%3Akwd-13069270641%3Alp9196363%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9Yf5EcukO1MOGLSSAuId8ToA&sid=fa99be4ac6a3b15b27500150fc850814&all_sr_blocks=166130206_257593729_0_0_0&checkin=2026-07-11&checkout=2026-07-12&dest_id=-1451103&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=166130206_257593729_0_0_0&hpos=3&matching_block_id=166130206_257593729_0_0_0&nflt=ht_id%3D1100&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=166130206_257593729_0_0_0__14276&srepoch=1761153905&srpvid=4cfa7a1f2815049d&type=total&ucfs=1&',
+      name: 'Château de Vault-de-Lugny',
+      rating: 5,
+      price: '€180-280',
+      distance: '15 km du domaine',
+      description: 'Château-hôtel avec spa et restaurant gastronomique',
+      link: '#',
     },
     {
-      name: 'Camping Le Petit Port – Olycamp',
+      name: 'Auberge de la Beursaudière',
+      rating: 3,
+      price: '€70-110',
+      distance: '12 km du domaine',
+      description: 'Auberge traditionnelle avec restaurant local',
+      link: '#',
+    },
+    {
+      name: 'Gîtes Les Lavandes',
       rating: 4,
-      distance: '800m du domaine - 10 mins à pieds',
-      link: 'https://www.camping-chatel-censoir.fr/',
+      price: '€120-200',
+      distance: '5 km du domaine',
+      description: 'Gîtes de groupe pour familles et amis',
+      link: '#',
     },
   ];
 
@@ -56,15 +68,28 @@ const Venue = () => {
                 
                 <div className="space-y-4 mb-8">
                   <p className="text-gray-700 leading-relaxed">
-                    Charmant domaine niché au cœur de la vallée de l’Yonne, le Domaine de Saint-Marc à Merry-sur-Yonne offre un cadre authentique et paisible, entre rivière et collines boisées. 
-                    Entourée d’un vaste parc arboré, cette élégante propriété allie le charme de la pierre bourguignonne à des espaces rénovés.
+                    Un domaine historique du XVIIe siècle niché au cœur de la Bourgogne, 
+                    entouré de vignobles et de jardins à la française. Le cadre parfait 
+                    pour célébrer notre union dans une atmosphère romantique et champêtre.
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 text-sm">
-  
-
-    
-
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                      <span>Château du XVIIe siècle</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
+                      <span>Jardins à la française</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-rose-400 rounded-full mr-2"></span>
+                      <span>Vignobles environnants</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
+                      <span>Parking privé gratuit</span>
+                    </div>
                   </div>
                 </div>
 
@@ -78,7 +103,7 @@ const Venue = () => {
 
               <div className="relative">
                 <img 
-                  src="https://image.jimcdn.com/app/cms/image/transf/dimension=1920x1024:format=jpg/path/s1a23af55007e2e4a/image/iefae6ff8c25577aa/version/1661015757/image.jpg" 
+                  src="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
                   alt="Domaine de Saint-Marc" 
                   className="w-full h-80 object-cover rounded-2xl shadow-lg"
                 />
@@ -141,7 +166,7 @@ const Venue = () => {
                 <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                 <div>
                   <p className="font-medium">En train</p>
-                  <p className="text-sm">Gare d'Auxerre (30 min) ou Gare de Châtel-Censoir (13 mins à pieds)</p>
+                  <p className="text-sm">Gare d'Auxerre (30 min) ou Gare de Montbard (45 min)</p>
                 </div>
               </div>
               <div className="flex items-start">
