@@ -90,7 +90,7 @@ const Venue = () => {
 
               <div className="relative">
                 <img 
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqYrBnsQK5eC1HFwfof9XogaZql5Yw2lb_Ww&s" 
+                  src="https://image.jimcdn.com/app/cms/image/transf/dimension=1920x1024:format=jpg/path/s1a23af55007e2e4a/image/iefae6ff8c25577aa/version/1661015757/image.jpg" 
                   alt="Domaine de Saint-Marc" 
                   className="w-full h-80 object-cover rounded-2xl shadow-lg"
                 />
