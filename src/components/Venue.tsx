@@ -72,25 +72,7 @@ const Venue = () => {
                     Entourée d’un vaste parc arboré, cette élégante propriété allie le charme de la pierre bourguignonne à des espaces rénovés.
                   </p>
                   
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                      <span>Château du XVIIe siècle</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-2"></span>
-                      <span>Jardins à la française</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-rose-400 rounded-full mr-2"></span>
-                      <span>Vignobles environnants</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
-                      <span>Parking privé gratuit</span>
-                    </div>
-                  </div>
-                </div>
+                
 
                 <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-purple-500 text-white font-medium rounded-xl hover:from-green-600 hover:to-purple-600 transition-all duration-300 shadow-lg">
                   <Navigation className="w-5 h-5 mr-2" />
