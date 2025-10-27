@@ -10,7 +10,7 @@ const Schedule = () => {
     {
       title: t('schedule.opening.title'),
       time: '15h30',
-      duration: '30 min',
+      duration: '',
       description: t('schedule.opening.description'),
       icon: Users,
       color: 'green',
