@@ -229,10 +229,8 @@ const OurStory = () => {
                 </p>
                 <div className="inline-flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm">
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-purple-400 rounded-full mr-2"></div>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-3 h-3 bg-rose-500 rounded-full mr-2"></div>
                   </div>
                 </div>
               </div>
