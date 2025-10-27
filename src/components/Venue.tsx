@@ -23,14 +23,6 @@ const Venue = () => {
       distance: '800m du domaine - 10 mins à pieds',
       link: 'https://www.camping-chatel-censoir.fr/',
     },
-    {
-      name: 'Gîtes Les Lavandes',
-      rating: 4,
-      price: '€120-200',
-      distance: '5 km du domaine',
-      description: 'Gîtes de groupe pour familles et amis',
-      link: '#',
-    },
   ];
 
   return (
