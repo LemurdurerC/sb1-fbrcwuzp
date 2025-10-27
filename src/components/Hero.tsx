@@ -56,7 +56,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="mb-8 animate-fade-in">
-          <Heart className="w-16 h-16 mx-auto mb-6 text-rose-300 animate-pulse" />
+  
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-wide">
             {t('hero.title')}
           </h1>
