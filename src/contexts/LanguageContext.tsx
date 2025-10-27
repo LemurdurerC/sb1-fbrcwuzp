@@ -55,7 +55,7 @@ const translations = {
     'schedule.ceremony.description': 'Echange des vœux au bord de l’Yonne',
     'schedule.cocktail.title': 'Vin d’honneur',
     'schedule.cocktail.description': 'Pièces de cocktail, animations culinaires et ludiques en extérieur',
-    'schedule.dinner.title': 'Dîner & Soirée Dansons ensemble jusqu’au bout de la nuit',
+    'schedule.dinner.title': 'Dîner & Soirée',
     'schedule.dinner.description': 'Dîner & Soirée Dansons ensemble jusqu’au bout de la nuit',
     
     // Venue
