@@ -49,13 +49,13 @@ const translations = {
     // Schedule
     'schedule.title': 'Le Jour J ',
     'schedule.subtitle': 'Le programme',
-    'schedule.opening.title': 'Ouverture & Accueil',
-    'schedule.opening.description': 'Arrivée des invités, accueil avec boissons de bienvenue dans les jardins du domaine',
-    'schedule.ceremony.title': 'Cérémonie Civile',
-    'schedule.ceremony.description': 'Échange des vœux dans un cadre romantique face aux vignobles bourguignons',
-    'schedule.cocktail.title': 'Cocktail & Animations',
-    'schedule.cocktail.description': 'Apéritif dinatoire, musique live, jeux et animations dans les jardins',
-    'schedule.dinner.title': 'Dîner & Soirée',
+    'schedule.opening.title': 'Ouverture des portes',
+    'schedule.opening.description': 'Arrivée et accueil des invités sur les lieux avant la cérémonie laïque',
+    'schedule.ceremony.title': 'Cérémonie Laïque',
+    'schedule.ceremony.description': 'Echange des vœux au bord de l’Yonne',
+    'schedule.cocktail.title': 'Vin d’honneur',
+    'schedule.cocktail.description': 'Pièces de cocktail, animations culinaires et ludiques en extérieur',
+    'schedule.dinner.title': 'Dîner & Soirée Dansons ensemble jusqu’au bout de la nuit',
     
     // Venue
     'venue.title': 'Lieu & Logistique',
