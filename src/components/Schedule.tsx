@@ -10,7 +10,7 @@ const Schedule = () => {
     {
       title: t('schedule.opening.title'),
       time: '15h30',
-      duration: '30 min',
+      duration: '',
       description: t('schedule.opening.description'),
       icon: Users,
       color: 'green',
@@ -19,7 +19,7 @@ const Schedule = () => {
     {
       title: t('schedule.ceremony.title'),
       time: '16h00',
-      duration: '45 min',
+      duration: '',
       description: t('schedule.ceremony.description'),
       icon: Heart,
       color: 'rose',
@@ -28,7 +28,7 @@ const Schedule = () => {
     {
       title: t('schedule.cocktail.title'),
       time: '17h00',
-      duration: '3h',
+      duration: '',
       description: t('schedule.cocktail.description'),
       icon: Music,
       color: 'purple',
@@ -37,7 +37,7 @@ const Schedule = () => {
     {
       title: t('schedule.dinner.title'),
       time: '20h00',
-      duration: '4h+',
+      duration: '',
       description: t('schedule.dinner.description'),
       icon: Utensils,
       color: 'orange',
