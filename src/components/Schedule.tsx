@@ -105,7 +105,7 @@ const Schedule = () => {
                                 <h3 className="text-lg md:text-xl font-bold">{event.title}</h3>
                                 <div className="flex items-center space-x-2 text-white/90">
                                   <span className="text-base md:text-lg font-medium">{event.time}</span>
-                                  <span className="text-sm">({event.duration})</span>
+                                  <span className="text-sm">{event.duration}</span>
                                 </div>
                               </div>
                             </div>
