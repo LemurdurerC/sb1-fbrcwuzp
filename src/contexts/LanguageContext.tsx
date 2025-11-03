@@ -53,9 +53,10 @@ const translations = {
     'schedule.opening.description': 'Arrivée et accueil des invités sur les lieux avant la cérémonie laïque',
     'schedule.ceremony.title': 'Cérémonie Laïque',
     'schedule.ceremony.description': 'Echange des vœux au bord de l’Yonne',
-    'schedule.cocktail.title': 'Cocktail & Animations',
-    'schedule.cocktail.description': 'Apéritif dinatoire, musique live, jeux et animations dans les jardins',
+    'schedule.cocktail.title': 'Vin d’honneur',
+    'schedule.cocktail.description': 'Pièces de cocktail, animations culinaires et ludiques en extérieur',
     'schedule.dinner.title': 'Dîner & Soirée',
+    'schedule.dinner.description': 'Dansons ensemble jusqu’au bout de la nuit'
     
     // Venue
     'venue.title': 'Lieu & Logistique',
