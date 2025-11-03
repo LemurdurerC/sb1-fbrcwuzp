@@ -68,9 +68,7 @@ const Venue = () => {
                 
                 <div className="space-y-4 mb-8">
                   <p className="text-gray-700 leading-relaxed">
-                    Un domaine historique du XVIIe siècle niché au cœur de la Bourgogne, 
-                    entouré de vignobles et de jardins à la française. Le cadre parfait 
-                    pour célébrer notre union dans une atmosphère romantique et champêtre.
+                    Charmant domaine niché au cœur de la vallée de l’Yonne, le Domaine de Saint-Marc à Merry-sur-Yonne offre un cadre authentique et paisible, entre rivière et collines boisées. Entourée d’un vaste parc arboré, cette élégante propriété allie le charme de la pierre bourguignonne à des espaces rénovés
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 text-sm">
