@@ -50,9 +50,9 @@ const Venue = () => {
         </div>
 
         {/* Main Venue */}
-        <div className="mb-16">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div className="mb-16 -mx-4 md:-mx-8">
+  <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center mb-6">
                   <MapPin className="w-8 h-8 text-green-500 mr-4" />
