@@ -127,8 +127,8 @@ const Venue = () => {
         </div>
 
         {/* Transport & Parking */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+<div className="grid grid-cols-1 gap-8">
+  <div className="bg-white rounded-2xl p-8 shadow-lg w-full">
             <div className="flex items-center mb-6">
               <Train className="w-8 h-8 text-purple-500 mr-4" />
               <h3 className="text-xl font-bold text-gray-800">
