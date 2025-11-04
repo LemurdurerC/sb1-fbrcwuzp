@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Brain, Trophy, Heart, Send, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { createClient } from '@supabase/supabase-js';
 
 const Quiz = () => {
   const { t } = useLanguage();
@@ -11,6 +12,12 @@ const Quiz = () => {
   const [userInfo, setUserInfo] = useState({ name: '', email: '' });
   const [score, setScore] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const supabase = createClient(
+    import.meta.env.VITE_SUPABASE_URL,
+    import.meta.env.VITE_SUPABASE_ANON_KEY
+  );
 
   const questions = [
     {
@@ -81,25 +88,37 @@ const Quiz = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would save the results to a database
+    setIsLoading(true);
+
     const quizData = {
       name: userInfo.name,
       email: userInfo.email,
       score: score,
-      totalQuestions: questions.length,
+      total_questions: questions.length,
       answers: answers,
-      timestamp: new Date().toISOString()
+      created_at: new Date().toISOString()
     };
-    
-    // Save to localStorage as a simple database simulation
-    const existingResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
-    existingResults.push(quizData);
-    localStorage.setItem('quizResults', JSON.stringify(existingResults));
-    
-    console.log('Quiz results saved:', quizData);
-    setIsSubmitted(true);
+
+    try {
+      const { error } = await supabase
+        .from('quizz')
+        .insert([quizData]);
+
+      if (error) {
+        console.error('Erreur lors de la sauvegarde:', error);
+        alert('Erreur lors de la sauvegarde des résultats');
+      } else {
+        console.log('Quiz results saved:', quizData);
+        setIsSubmitted(true);
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+      alert('Une erreur est survenue');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const resetQuiz = () => {
@@ -233,10 +252,11 @@ const Quiz = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold rounded-xl hover:from-orange-600 hover:to-rose-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                  disabled={isLoading}
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold rounded-xl hover:from-orange-600 hover:to-rose-600 transform hover:scale-105 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-5 h-5 mr-2" />
-                  Sauvegarder mes Résultats
+                  {isLoading ? 'Sauvegarde en cours...' : 'Sauvegarder mes Résultats'}
                 </button>
               </div>
             </form>
