@@ -30,6 +30,15 @@ const Venue = () => {
       description: 'A definir',
       link: 'https://www.camping-chatel-censoir.fr/',
     },
+    {
+      name: 'Comment Venir',
+      rating: 5,
+      price: 'En train Gare d'Auxerre (30 min) ou Gare de Montbard (45 min)',
+      distance: 'En voiture A6 sortie Auxerre Sud, puis D965 direction Avallon',
+      description: 'Covoiturage Rejoindre le groupe WhatsApp',
+    }
+
+
   ];
 
   return (
