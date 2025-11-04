@@ -7,78 +7,79 @@ const OurStory = () => {
   const { t } = useLanguage();
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
-  const countries = [
-    {
-      code: 'FR',
-      name: 'France',
-      x: 23,
-      y: 43,
-      image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇫🇷',
-      landmark: '🗼',
-      description: 'La ville lumière et ses monuments emblématiques'
-    },
-    {
-      code: 'IE',
-      name: 'Ireland',
-      x: 18,
-      y: 38,
-      image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇮🇪',
-      landmark: '☘️',
-      description: 'Les paysages verts et la culture irlandaise'
-    },
-    {
-      code: 'UK',
-      name: 'United Kingdom',
-      x: 21,
-      y: 38,
-      image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇬🇧',
-      landmark: '🏰',
-      description: 'Histoire, culture et charme britannique'
-    },
-    {
-      code: 'ES',
-      name: 'Spain',
-      x: 20,
-      y: 50,
-      image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇪🇸',
-      landmark: '🏛️',
-      description: 'Soleil, architecture et saveurs espagnoles'
-    },
-    {
-      code: 'DE',
-      name: 'Germany',
-      x: 27,
-      y: 39,
-      image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇩🇪',
-      landmark: '🏰',
-      description: 'Châteaux médiévaux et culture allemande'
-    },
-    {
-      code: 'IT',
-      name: 'Italy',
-      x: 27,
-      y: 45,
-      image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇮🇹',
-      landmark: '🍕',
-      description: 'Art, histoire et gastronomie italienne'
-    },
-    {
-      code: 'JP',
-      name: 'Japan',
-      x: 92,
-      y: 45,
-      image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
-      flag: '🇯🇵',
-      landmark: '🗻',
-      description: 'Tradition japonaise et modernité'
-    },
-  ];
+ const countries = [
+  {
+    code: 'FR',
+    name: 'France',
+    x: 27.8,   // 60 / 215.86 * 100
+    y: 70.1,   // 131 / 186.82 * 100
+    image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+    flag: '🇫🇷',
+    landmark: '🗼',
+    description: 'La ville lumière et ses monuments emblématiques'
+  },
+  {
+    code: 'IE',
+    name: 'Ireland',
+    x: 18.5,   // 40.02 / 215.86 * 100
+    y: 63.7,   // 119.03 / 186.82 * 100
+    image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+    flag: '🇮🇪',
+    landmark: '☘️',
+    description: 'Les paysages verts et la culture irlandaise'
+  },
+  {
+    code: 'UK',
+    name: 'United Kingdom',
+    x: 21.6,   // 46.63 / 215.86 * 100
+    y: 54.4,   // 101.56 / 186.82 * 100
+    image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+    flag: '🇬🇧',
+    landmark: '🏰',
+    description: 'Histoire, culture et charme britannique'
+  },
+  {
+    code: 'ES',
+    name: 'Spain',
+    x: 22.6,   // 48.87 / 215.86 * 100
+    y: 84.3,   // 157.48 / 186.82 * 100
+    image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+    flag: '🇪🇸',
+    landmark: '🏛️',
+    description: 'Soleil, architecture et saveurs espagnoles'
+  },
+  {
+    code: 'DE',
+    name: 'Germany',
+    x: 33.2,   // 71.65 / 215.86 * 100
+    y: 64.4,   // 120.36 / 186.82 * 100
+    image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+    flag: '🇩🇪',
+    landmark: '🏰',
+    description: 'Châteaux médiévaux et culture allemande'
+  },
+  {
+    code: 'IT',
+    name: 'Italy',
+    x: 33.7,   // 72.78 / 215.86 * 100
+    y: 79.9,   // 149.46 / 186.82 * 100
+    image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+    flag: '🇮🇹',
+    landmark: '🍕',
+    description: 'Art, histoire et gastronomie italienne'
+  },
+  {
+    code: 'JP',
+    name: 'Japan',
+    x: 88.1,   // 190 / 215.86 * 100
+    y: 18.7,   // 35 / 186.82 * 100
+    image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+    flag: '🇯🇵',
+    landmark: '🗻',
+    description: 'Tradition japonaise et modernité'
+  },
+];
+
 
   return (
     <section id="story" className="py-20 bg-gradient-to-br from-rose-50 via-purple-50 to-orange-50">
