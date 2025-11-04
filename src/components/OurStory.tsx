@@ -96,6 +96,7 @@ const OurStory = () => {
             Découvrez les pays que nous avons explorés main dans la main
           </p>
           
+          <div className="bg-white rounded-3xl p-8 shadow-xl">
 <div className="relative w-full aspect-[3/2] max-w-5xl mx-auto bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden"
      style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}>
   {/* Fixed background map */}
