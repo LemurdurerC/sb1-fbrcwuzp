@@ -164,7 +164,8 @@ const Venue = () => {
             </div>
           </div>
 
-     
+ 
+              </div>
             </div>
           </div>
         </div>
