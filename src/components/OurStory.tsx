@@ -99,7 +99,8 @@ const OurStory = () => {
           <div className="bg-white rounded-3xl p-8 shadow-xl">
             <div className="relative">
               {/* World Map Background */}
-              <div className="relative w-full aspect-[3/2] max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden">
+              <div className="relative w-full aspect-[3/2] max-w-5xl mx-auto bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden"
+     style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}>
              {/* Fixed background map */}
   <div
     className="absolute inset-0 bg-no-repeat bg-center"
