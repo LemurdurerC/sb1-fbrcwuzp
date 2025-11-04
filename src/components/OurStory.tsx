@@ -112,25 +112,28 @@ const OurStory = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-green-50/30"></div>
                 </div>
                 
-                {/* Countries */}
-                {countries.map((country) => (
-                  <div
-                    key={country.code}
-                    className="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-10"
-                    style={{ left: `${country.x}%`, top: `${country.y}%` }}
-                    onMouseEnter={() => setHoveredCountry(country.code)}
-                    onMouseLeave={() => setHoveredCountry(null)}
-                    onClick={() => setHoveredCountry(hoveredCountry === country.code ? null : country.code)}
-                  >
-                    <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
-                      hoveredCountry === country.code
-                        ? 'bg-rose-500 scale-150 shadow-lg'
-                        : 'bg-purple-400 hover:bg-rose-400 hover:scale-125'
-                    }`}>
-                      <div className="absolute inset-0 rounded-full animate-ping bg-rose-400 opacity-20"></div>
-                    </div>
-                  </div>
-                ))}
+{/* Countries */}
+{countries.map((country) => (
+  <div
+    key={country.code}
+    className="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-10"
+    style={{ left: `${country.x}%`, top: `${country.y}%` }}
+    onClick={() =>
+      setHoveredCountry(hoveredCountry === country.code ? null : country.code)
+    }
+  >
+    <div
+      className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
+        hoveredCountry === country.code
+          ? 'bg-rose-500 scale-150 shadow-lg'
+          : 'bg-purple-400 hover:bg-rose-400 hover:scale-125'
+      }`}
+    >
+      <div className="absolute inset-0 rounded-full animate-ping bg-rose-400 opacity-20"></div>
+    </div>
+  </div>
+))}
+
                 
               </div>
 
