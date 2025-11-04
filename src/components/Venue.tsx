@@ -98,15 +98,7 @@ const Venue = () => {
                 <div className="flex items-start justify-between mb-4">
                   <h4 className="text-lg font-bold text-gray-800 leading-tight">{hotel.name}</h4>
                   <div className="flex ml-2">
-                    {[...Array(5)].map((_, i) => (
-                      <span
-                        key={i}
-                        className={`text-sm ${
-                          i < hotel.rating ? 'text-yellow-400' : 'text-gray-300'
-                        }`}
-                      >
-                        ★
-                      </span>
+
                     ))}
                   </div>
                 </div>
