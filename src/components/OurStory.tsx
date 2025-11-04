@@ -90,9 +90,17 @@ const OurStory = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-rose-400 to-purple-400 mx-auto mt-6 rounded-full"></div>
         </div>
 
-<div className="relative w-full aspect-[3/2] max-w-5xl mx-auto bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden"
-     style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}>
-  {/* Fixed background map */}
+        {/* Interactive Map */}
+        <div>
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Découvrez les pays que nous avons explorés main dans la main
+          </p>
+          
+          <div className="bg-white rounded-3xl p-8 shadow-xl">
+            <div className="relative">
+              {/* World Map Background */}
+              <div className="relative w-full aspect-[3/2] max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl overflow-hidden">
+             {/* Fixed background map */}
   <div
     className="absolute inset-0 bg-no-repeat bg-center"
     style={{
