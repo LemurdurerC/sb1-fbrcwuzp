@@ -126,7 +126,48 @@ const Venue = () => {
           </div>
         </div>
 
-       
+        {/* Transport & Parking */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="flex items-center mb-6">
+              <Train className="w-8 h-8 text-purple-500 mr-4" />
+              <h3 className="text-xl font-bold text-gray-800">
+                {t('venue.transport.title')}
+              </h3>
+            </div>
+            <div className="space-y-4 text-gray-600">
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div>
+                  <p className="font-medium">En train</p>
+                  <p className="text-sm">Gare d'Auxerre (30 min) ou Gare de Montbard (45 min)</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div>
+                  <p className="font-medium">En voiture</p>
+                  <p className="text-sm">A6 sortie Auxerre Sud, puis D965 direction Avallon</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-rose-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div>
+                  <p className="font-medium">Covoiturage</p>
+                  <p className="text-sm">
+                    <a href="https://chat.whatsapp.com/invite/covoiturage-simon-talia-2026" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline">
+                      Rejoindre le groupe WhatsApp
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+         
+         
+        </div>
       </div>
     </section>
   );
