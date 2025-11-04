@@ -7,12 +7,15 @@ const OurStory = () => {
   const { t } = useLanguage();
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
- const countries = [
+const offsetX = 2; // décale à droite
+const offsetY = 2; // décale vers le bas
+
+const countries = [
   {
     code: 'FR',
     name: 'France',
-    x: 27.8,   // 60 / 215.86 * 100
-    y: 70.1,   // 131 / 186.82 * 100
+    x: 27.8 + offsetX,
+    y: 70.1 + offsetY,
     image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇫🇷',
     landmark: '🗼',
@@ -21,8 +24,8 @@ const OurStory = () => {
   {
     code: 'IE',
     name: 'Ireland',
-    x: 18.5,   // 40.02 / 215.86 * 100
-    y: 63.7,   // 119.03 / 186.82 * 100
+    x: 18.5 + offsetX,
+    y: 63.7 + offsetY,
     image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇮🇪',
     landmark: '☘️',
@@ -31,8 +34,8 @@ const OurStory = () => {
   {
     code: 'UK',
     name: 'United Kingdom',
-    x: 21.6,   // 46.63 / 215.86 * 100
-    y: 54.4,   // 101.56 / 186.82 * 100
+    x: 21.6 + offsetX,
+    y: 54.4 + offsetY,
     image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇬🇧',
     landmark: '🏰',
@@ -41,8 +44,8 @@ const OurStory = () => {
   {
     code: 'ES',
     name: 'Spain',
-    x: 22.6,   // 48.87 / 215.86 * 100
-    y: 84.3,   // 157.48 / 186.82 * 100
+    x: 22.6 + offsetX,
+    y: 84.3 + offsetY,
     image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇪🇸',
     landmark: '🏛️',
@@ -51,8 +54,8 @@ const OurStory = () => {
   {
     code: 'DE',
     name: 'Germany',
-    x: 33.2,   // 71.65 / 215.86 * 100
-    y: 64.4,   // 120.36 / 186.82 * 100
+    x: 33.2 + offsetX,
+    y: 64.4 + offsetY,
     image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇩🇪',
     landmark: '🏰',
@@ -61,8 +64,8 @@ const OurStory = () => {
   {
     code: 'IT',
     name: 'Italy',
-    x: 33.7,   // 72.78 / 215.86 * 100
-    y: 79.9,   // 149.46 / 186.82 * 100
+    x: 33.7 + offsetX,
+    y: 79.9 + offsetY,
     image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇮🇹',
     landmark: '🍕',
@@ -71,14 +74,15 @@ const OurStory = () => {
   {
     code: 'JP',
     name: 'Japan',
-    x: 88.1,   // 190 / 215.86 * 100
-    y: 18.7,   // 35 / 186.82 * 100
+    x: 88.1 + offsetX,
+    y: 18.7 + offsetY,
     image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇯🇵',
     landmark: '🗻',
     description: 'Tradition japonaise et modernité'
   },
 ];
+
 
 
   return (
