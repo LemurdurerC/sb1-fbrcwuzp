@@ -83,7 +83,7 @@ const Venue = () => {
 
               <div className="relative">
                 <img 
-                  src="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                  src="https://images.pexels.com/photos/1024993/pexels-photod1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
                   alt="Domaine de Saint-Marc" 
                   className="w-full h-80 object-cover rounded-2xl shadow-lg"
                 />
