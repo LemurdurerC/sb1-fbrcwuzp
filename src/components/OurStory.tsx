@@ -8,7 +8,7 @@ const OurStory = () => {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
 const offsetX = 6; // décale beaucoup plus à droite
-const offsetY = 2; // décale légèrement vers le bas
+const offsetY = 3; // décale légèrement vers le bas
 
 const countries = [
   {
