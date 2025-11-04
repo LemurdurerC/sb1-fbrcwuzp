@@ -98,8 +98,6 @@ const Venue = () => {
                 <div className="flex items-start justify-between mb-4">
                   <h4 className="text-lg font-bold text-gray-800 leading-tight">{hotel.name}</h4>
                   <div className="flex ml-2">
-
-                    ))}
                   </div>
                 </div>
                 
