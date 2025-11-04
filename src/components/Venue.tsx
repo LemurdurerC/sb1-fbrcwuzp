@@ -71,7 +71,6 @@ const Venue = () => {
                     Charmant domaine niché au cœur de la vallée de l’Yonne, le Domaine de Saint-Marc à Merry-sur-Yonne offre un cadre authentique et paisible, entre rivière et collines boisées. Entourée d’un vaste parc arboré, cette élégante propriété allie le charme de la pierre bourguignonne à des espaces rénovés
                   </p>
 
-                  </div>
                 </div>
 
                 <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-purple-500 text-white font-medium rounded-xl hover:from-green-600 hover:to-purple-600 transition-all duration-300 shadow-lg">
