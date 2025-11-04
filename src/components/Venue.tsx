@@ -164,7 +164,20 @@ const Venue = () => {
             </div>
           </div>
 
- 
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
+            
+            
+              
+                  <p className="font-medium">Navette</p>
+                  <p className="text-sm">Service gratuit hôtels ↔ domaine (17h-02h)</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <div>
+                  <p className="font-medium">Sécurité</p>
+                  <p className="text-sm">Parking surveillé toute la soirée</p>
+                </div>
               </div>
             </div>
           </div>
