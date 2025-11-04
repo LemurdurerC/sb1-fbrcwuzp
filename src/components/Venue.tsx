@@ -124,7 +124,6 @@ const Venue = () => {
               </div>
             ))}
           </div>
-        </div>
 
         
   );
