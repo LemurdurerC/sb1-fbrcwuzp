@@ -120,8 +120,8 @@ const Venue = () => {
 
         {/* Transport & Parking */}
 <div className="max-w-3xl mx-auto mt-16">
-  <div className="bg-white rounded-2xl p-8 shadow-lg w-full">
-            <div className="flex items-center mb-6">
+  <div className="bg-white rounded-2xl p-8 shadow-lg">
+    <div className="flex items-center mb-6">
               <Train className="w-8 h-8 text-purple-500 mr-4" />
               <h3 className="text-xl font-bold text-gray-800">
                 {t('venue.transport.title')}
