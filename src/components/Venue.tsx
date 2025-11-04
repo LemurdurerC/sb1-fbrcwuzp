@@ -36,7 +36,7 @@ const Venue = () => {
       price: 'En train Gare d'Auxerre (30 min) ou Gare de Montbard (45 min)',
       distance: 'En voiture A6 sortie Auxerre Sud, puis D965 direction Avallon',
       description: 'Covoiturage Rejoindre le groupe WhatsApp',
-      link:
+      link: ''
     }
 
 
