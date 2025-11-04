@@ -164,35 +164,7 @@ const Venue = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <div className="flex items-center mb-6">
-              <Car className="w-8 h-8 text-orange-500 mr-4" />
-              <h3 className="text-xl font-bold text-gray-800">
-                {t('venue.parking.title')}
-              </h3>
-            </div>
-            <div className="space-y-4 text-gray-600">
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <div>
-                  <p className="font-medium">Domaine</p>
-                  <p className="text-sm">Parking privé gratuit (100 places)</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <div>
-                  <p className="font-medium">Navette</p>
-                  <p className="text-sm">Service gratuit hôtels ↔ domaine (17h-02h)</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <div>
-                  <p className="font-medium">Sécurité</p>
-                  <p className="text-sm">Parking surveillé toute la soirée</p>
-                </div>
-              </div>
+     
             </div>
           </div>
         </div>
