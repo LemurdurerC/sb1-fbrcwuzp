@@ -27,7 +27,7 @@ const Venue = () => {
       rating: 3,
       price: '',
       distance: '800m du domaine – 10 mins à pieds',
-      description: 'Auberge traditionnelle avec restaurant local',
+      description: 'A definir',
       link: 'https://www.camping-chatel-censoir.fr/',
     },
   ];
