@@ -124,8 +124,11 @@ const Venue = () => {
               </div>
             ))}
           </div>
+        </div>
 
-        
+       
+      </div>
+    </section>
   );
 };
 
