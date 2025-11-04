@@ -41,27 +41,12 @@ const Venue = () => {
 
 
   ];
-<div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+
                 <div>
                   <p className="font-medium">En train</p>
                   <p className="text-sm">Gare d'Auxerre (30 min) ou Gare de Montbard (45 min)</p>
                 </div>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <div>
-                  <p className="font-medium">En voiture</p>
-                  <p className="text-sm">A6 sortie Auxerre Sud, puis D965 direction Avallon</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-rose-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                <div>
-                  <p className="font-medium">Covoiturage</p>
-                  <p className="text-sm">
-                    <a href="https://chat.whatsapp.com/invite/covoiturage-simon-talia-2026" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 underline">
-                      Rejoindre le groupe WhatsApp
-                    </a>
+
   return (
     <section id="venue" className="py-20 bg-gradient-to-br from-green-50 via-purple-50 to-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
