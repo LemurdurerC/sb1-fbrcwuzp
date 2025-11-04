@@ -10,12 +10,15 @@ const OurStory = () => {
 const offsetX = 2; // décale à droite
 const offsetY = 2; // décale vers le bas
 
+const offsetX = 8; // décale beaucoup plus à droite
+const offsetY = 2; // décale légèrement vers le bas
+
 const countries = [
   {
     code: 'FR',
     name: 'France',
-    x: 27.8 + offsetX,
-    y: 70.1 + offsetY,
+    x: 27.8 + offsetX, // 35.8%
+    y: 70.1 + offsetY, // 72.1%
     image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇫🇷',
     landmark: '🗼',
@@ -24,8 +27,8 @@ const countries = [
   {
     code: 'IE',
     name: 'Ireland',
-    x: 18.5 + offsetX,
-    y: 63.7 + offsetY,
+    x: 18.5 + offsetX, // 26.5%
+    y: 63.7 + offsetY, // 65.7%
     image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇮🇪',
     landmark: '☘️',
@@ -34,8 +37,8 @@ const countries = [
   {
     code: 'UK',
     name: 'United Kingdom',
-    x: 21.6 + offsetX,
-    y: 54.4 + offsetY,
+    x: 21.6 + offsetX, // 29.6%
+    y: 54.4 + offsetY, // 56.4%
     image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇬🇧',
     landmark: '🏰',
@@ -44,8 +47,8 @@ const countries = [
   {
     code: 'ES',
     name: 'Spain',
-    x: 22.6 + offsetX,
-    y: 84.3 + offsetY,
+    x: 22.6 + offsetX, // 30.6%
+    y: 84.3 + offsetY, // 86.3%
     image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇪🇸',
     landmark: '🏛️',
@@ -54,8 +57,8 @@ const countries = [
   {
     code: 'DE',
     name: 'Germany',
-    x: 33.2 + offsetX,
-    y: 64.4 + offsetY,
+    x: 33.2 + offsetX, // 41.2%
+    y: 64.4 + offsetY, // 66.4%
     image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇩🇪',
     landmark: '🏰',
@@ -64,8 +67,8 @@ const countries = [
   {
     code: 'IT',
     name: 'Italy',
-    x: 33.7 + offsetX,
-    y: 79.9 + offsetY,
+    x: 33.7 + offsetX, // 41.7%
+    y: 79.9 + offsetY, // 81.9%
     image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇮🇹',
     landmark: '🍕',
@@ -74,8 +77,8 @@ const countries = [
   {
     code: 'JP',
     name: 'Japan',
-    x: 88.1 + offsetX,
-    y: 18.7 + offsetY,
+    x: 88.1 + offsetX, // 96.1%
+    y: 18.7 + offsetY, // 20.7%
     image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇯🇵',
     landmark: '🗻',
