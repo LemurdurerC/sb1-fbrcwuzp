@@ -42,10 +42,7 @@ const Venue = () => {
 
   ];
 
-                <div>
-                  <p className="font-medium">En train</p>
-                  <p className="text-sm">Gare d'Auxerre (30 min) ou Gare de Montbard (45 min)</p>
-                </div>
+    
 
   return (
     <section id="venue" className="py-20 bg-gradient-to-br from-green-50 via-purple-50 to-yellow-50">
