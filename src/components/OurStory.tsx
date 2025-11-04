@@ -7,9 +7,6 @@ const OurStory = () => {
   const { t } = useLanguage();
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
-const offsetX = 2; // décale à droite
-const offsetY = 2; // décale vers le bas
-
 const offsetX = 8; // décale beaucoup plus à droite
 const offsetY = 2; // décale légèrement vers le bas
 
@@ -85,6 +82,7 @@ const countries = [
     description: 'Tradition japonaise et modernité'
   },
 ];
+
 
 
 
