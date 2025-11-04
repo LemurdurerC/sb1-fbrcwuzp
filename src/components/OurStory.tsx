@@ -7,15 +7,12 @@ const OurStory = () => {
   const { t } = useLanguage();
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
-const offsetX = 6; // décale beaucoup plus à droite
-const offsetY = 3; // décale légèrement vers le bas
-
 const countries = [
   {
     code: 'FR',
     name: 'France',
-    x: 27.8 + offsetX, // 35.8%
-    y: 70.1 + offsetY, // 72.1%
+    x: 31, // légèrement à droite
+    y: 72, // ajusté vers le bas
     image: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇫🇷',
     landmark: '🗼',
@@ -24,8 +21,8 @@ const countries = [
   {
     code: 'IE',
     name: 'Ireland',
-    x: 18.5 + offsetX, // 26.5%
-    y: 63.7 + offsetY, // 65.7%
+    x: 22, 
+    y: 65,
     image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇮🇪',
     landmark: '☘️',
@@ -34,8 +31,8 @@ const countries = [
   {
     code: 'UK',
     name: 'United Kingdom',
-    x: 21.6 + offsetX, // 29.6%
-    y: 54.4 + offsetY, // 56.4%
+    x: 25,
+    y: 57,
     image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇬🇧',
     landmark: '🏰',
@@ -44,8 +41,8 @@ const countries = [
   {
     code: 'ES',
     name: 'Spain',
-    x: 22.6 + offsetX, // 30.6%
-    y: 84.3 + offsetY, // 86.3%
+    x: 25,
+    y: 87,
     image: 'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇪🇸',
     landmark: '🏛️',
@@ -54,8 +51,8 @@ const countries = [
   {
     code: 'DE',
     name: 'Germany',
-    x: 33.2 + offsetX, // 41.2%
-    y: 64.4 + offsetY, // 66.4%
+    x: 38,
+    y: 66,
     image: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇩🇪',
     landmark: '🏰',
@@ -64,8 +61,8 @@ const countries = [
   {
     code: 'IT',
     name: 'Italy',
-    x: 33.7 + offsetX, // 41.7%
-    y: 79.9 + offsetY, // 81.9%
+    x: 40,
+    y: 82,
     image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇮🇹',
     landmark: '🍕',
@@ -74,14 +71,15 @@ const countries = [
   {
     code: 'JP',
     name: 'Japan',
-    x: 88.1 + offsetX, // 96.1%
-    y: 18.7 + offsetY, // 20.7%
+    x: 97, 
+    y: 20,
     image: 'https://images.pexels.com/photos/2901269/pexels-photo-2901269.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇯🇵',
     landmark: '🗻',
     description: 'Tradition japonaise et modernité'
   },
 ];
+
 
 
 
