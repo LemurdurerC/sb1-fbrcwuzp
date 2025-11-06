@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Brain, Trophy, Heart, Send, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { createClient } from '@supabase/supabase-js';
 
 const Quiz = () => {
   const { t } = useLanguage();
@@ -13,11 +12,6 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  const supabase = createClient(
-    import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_ANON_KEY
-  );
 
   const questions = [
     {
@@ -98,19 +92,27 @@ const Quiz = () => {
       score: score,
       total_questions: questions.length,
       answers: answers,
-      created_at: new Date().toISOString()
     };
 
     try {
-      const { error } = await supabase
-        .from('quizz')
-        .insert([quizData]);
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/rsvp-mysql/quiz`;
 
-      if (error) {
-        console.error('Erreur lors de la sauvegarde:', error);
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify(quizData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        console.error('Erreur lors de la sauvegarde:', result);
         alert('Erreur lors de la sauvegarde des résultats');
       } else {
-        console.log('Quiz results saved:', quizData);
+        console.log('Quiz results saved:', result);
         setIsSubmitted(true);
       }
     } catch (error) {

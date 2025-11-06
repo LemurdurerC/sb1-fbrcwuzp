@@ -91,29 +91,32 @@ const Venue = () => {
         {/* Hotels */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-            {t('venue.hotels.title')}
+            Hébergements
           </h3>
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {hotels.map((hotel, index) => (
-              <div
+              <a
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+                href={hotel.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <h4 className="text-lg font-bold text-gray-800 leading-tight">{hotel.name}</h4>
-                  <div className="flex ml-2">
+                <div
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-300 h-full cursor-pointer"
+                >
+                  <h4 className="text-lg font-bold text-gray-800 leading-tight mb-4 group-hover:text-green-600 transition-colors">{hotel.name}</h4>
+
+                  {hotel.price && <p className="text-green-600 font-medium mb-2">{hotel.price}</p>}
+                  <p className="text-sm text-gray-500 mb-3">{hotel.distance}</p>
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">{hotel.description}</p>
+
+                  <div className="inline-flex items-center text-green-600 hover:text-green-700 font-medium group-hover:translate-x-1 transition-transform duration-200 text-sm">
+                    Consulter
+                    <ExternalLink className="w-4 h-4 ml-2" />
                   </div>
                 </div>
-                
-                <p className="text-purple-600 font-medium mb-2">{hotel.price}</p>
-                <p className="text-sm text-gray-500 mb-3">{hotel.distance}</p>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">{hotel.description}</p>
-                
-                <button className="inline-flex items-center text-green-600 hover:text-green-700 font-medium group-hover:translate-x-1 transition-transform duration-200 text-sm">
-                  Réserver
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </button>
-              </div>
+              </a>
             ))}
           </div>
         </div>

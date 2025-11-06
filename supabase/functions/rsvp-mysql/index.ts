@@ -16,6 +16,14 @@ interface RSVPData {
   message?: string;
 }
 
+interface QuizData {
+  name: string;
+  email: string;
+  score: number;
+  total_questions: number;
+  answers: string[];
+}
+
 Deno.serve(async (req: Request) => {
   try {
     if (req.method === "OPTIONS") {
@@ -34,11 +42,61 @@ Deno.serve(async (req: Request) => {
       database: "mmocore",
     });
 
-    // POST - Save RSVP
+    const pathname = new URL(req.url).pathname;
+
+    // POST - Save RSVP or Quiz
     if (req.method === "POST") {
-      const rsvpData: RSVPData = await req.json();
-      
+      const data = await req.json();
+
+      // Quiz endpoint
+      if (pathname === "/rsvp-mysql/quiz") {
+        const quizData: QuizData = data;
+
+        if (!quizData.name || !quizData.email || quizData.score === undefined) {
+          await connection.end();
+          return new Response(
+            JSON.stringify({ error: "Missing required fields" }),
+            {
+              status: 400,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            }
+          );
+        }
+
+        const answersJson = JSON.stringify(quizData.answers);
+
+        const [result] = await connection.execute(
+          `INSERT INTO quizz (name, email, score, total_questions, answers, submitted_at)
+           VALUES (?, ?, ?, ?, ?, NOW())`,
+          [
+            quizData.name,
+            quizData.email,
+            quizData.score,
+            quizData.total_questions,
+            answersJson,
+          ]
+        );
+
+        await connection.end();
+
+        return new Response(
+          JSON.stringify({
+            success: true,
+            message: "Quiz saved successfully",
+            id: (result as any).insertId
+          }),
+          {
+            status: 200,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          }
+        );
+      }
+
+      // RSVP endpoint
+      const rsvpData: RSVPData = data;
+
       if (!rsvpData.name || !rsvpData.email || !rsvpData.attendance) {
+        await connection.end();
         return new Response(
           JSON.stringify({ error: "Missing required fields" }),
           {
