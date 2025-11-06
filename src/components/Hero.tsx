@@ -41,6 +41,7 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center "
         style={{
                     backgroundImage: `url(${backimage})`, // ✅ image importée utilisée ici
+          backgroundSize: window.innerWidth < 768 ? '120%' : 'cover', // 👈 dézoom mobile
               backgroundPosition: 'center 30%', // ajuste le cadrage
         }}
       >
