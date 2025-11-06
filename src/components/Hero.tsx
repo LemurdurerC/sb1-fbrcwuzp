@@ -38,10 +38,12 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with parallax effect */}
       <div 
-        className="absolute inset-0 bg-cover bg-center "
-        style={{
-                    backgroundImage: `url(${backimage})`, // ✅ image importée utilisée ici
-        }}
+className="absolute inset-0 bg-center md:bg-fixed bg-no-repeat"
+  style={{
+    backgroundImage: `url(${quizzImage})`,
+    backgroundSize: window.innerWidth < 768 ? '120%' : 'cover', // 👈 dézoom mobile
+    backgroundPosition: 'center 30%', // ajuste le cadrage
+  }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-rose-900/40 via-purple-900/30 to-orange-900/40"></div>
       </div>
