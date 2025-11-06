@@ -38,7 +38,7 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with parallax effect */}
       <div 
-        className="absolute inset-0 bg-cover bg-fixed bg-[center_top]" 
+        className="absolute inset-0 bg-cover bg-center "
         style={{
                     backgroundImage: `url(${backimage})`, // ✅ image importée utilisée ici
         }}
