@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Calendar } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import backimage from './5.png'; // ✅ Import de l'image locale
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -39,7 +40,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop)',
+                    backgroundImage: `url(${backimage})`, // ✅ image importée utilisée ici
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-rose-900/40 via-purple-900/30 to-orange-900/40"></div>
