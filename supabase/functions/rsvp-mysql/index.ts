@@ -63,33 +63,52 @@ Deno.serve(async (req: Request) => {
           );
         }
 
-        const answersJson = JSON.stringify(quizData.answers);
+        try {
+          // Create table if it doesn't exist
+          await connection.query(`
+            CREATE TABLE IF NOT EXISTS quizz (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              name VARCHAR(255) NOT NULL,
+              email VARCHAR(255) NOT NULL,
+              score INT NOT NULL,
+              total_questions INT NOT NULL,
+              answers JSON NOT NULL,
+              submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+          `);
 
-        const [result] = await connection.execute(
-          `INSERT INTO quizz (name, email, score, total_questions, answers, submitted_at)
-           VALUES (?, ?, ?, ?, ?, NOW())`,
-          [
-            quizData.name,
-            quizData.email,
-            quizData.score,
-            quizData.total_questions,
-            answersJson,
-          ]
-        );
+          const answersJson = JSON.stringify(quizData.answers);
 
-        await connection.end();
+          const [result] = await connection.execute(
+            `INSERT INTO quizz (name, email, score, total_questions, answers)
+             VALUES (?, ?, ?, ?, ?)`,
+            [
+              quizData.name,
+              quizData.email,
+              quizData.score,
+              quizData.total_questions,
+              answersJson,
+            ]
+          );
 
-        return new Response(
-          JSON.stringify({
-            success: true,
-            message: "Quiz saved successfully",
-            id: (result as any).insertId
-          }),
-          {
-            status: 200,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
-          }
-        );
+          await connection.end();
+
+          return new Response(
+            JSON.stringify({
+              success: true,
+              message: "Quiz saved successfully",
+              id: (result as any).insertId
+            }),
+            {
+              status: 200,
+              headers: { ...corsHeaders, "Content-Type": "application/json" },
+            }
+          );
+        } catch (error) {
+          console.error('Quiz insert error:', error);
+          await connection.end();
+          throw error;
+        }
       }
 
       // RSVP endpoint
