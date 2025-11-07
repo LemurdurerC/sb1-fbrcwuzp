@@ -24,7 +24,6 @@ const translations = {
     
     // Hero
     'hero.title': 'Simon & Talia',
-    'hero.subtitle': 'Le bonheur n’est réel que lors qu’il est partagé',
     'hero.date': '11 juillet 2026',
     'hero.countdown.days': 'jours',
     'hero.countdown.hours': 'heures',
