@@ -411,16 +411,7 @@ const RSVP = () => {
             Nous avons reçu votre confirmation et nous réjouissons de célébrer avec vous !
           </p>
 
-          {debugInfo.length > 0 && (
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8 max-w-2xl mx-auto text-left">
-              <h3 className="font-bold text-blue-900 mb-2">Logs de débogage:</h3>
-              <div className="text-xs text-blue-800 space-y-1 max-h-40 overflow-y-auto font-mono">
-                {debugInfo.map((info, index) => (
-                  <div key={index}>{info}</div>
-                ))}
-              </div>
-            </div>
-          )}
+         
 
           {whatsappLink && (
             <div className="bg-green-50 border border-green-200 rounded-2xl p-6 mb-8 max-w-md mx-auto">
