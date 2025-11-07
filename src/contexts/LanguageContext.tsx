@@ -24,6 +24,7 @@ const translations = {
     
     // Hero
     'hero.title': 'Simon & Talia',
+    'hero.subtitle': 'é',
     'hero.date': '11 juillet 2026',
     'hero.countdown.days': 'jours',
     'hero.countdown.hours': 'heures',
