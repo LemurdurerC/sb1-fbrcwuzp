@@ -56,7 +56,7 @@ const translations = {
     'schedule.cocktail.title': 'Vin d’honneur',
     'schedule.cocktail.description': 'Pièces de cocktail, animations culinaires et ludiques en extérieur',
     'schedule.dinner.title': 'Dîner & Soirée',
-    'schedule.dinner.description': 'Dansons ensemble jusqu’au bout de la nuit',
+    'schedule.dinner.description': 'Dansons ensemble jusqu’au bout de la nuit !',
     
     // Venue
     'venue.title': 'Lieu & Logistique',
