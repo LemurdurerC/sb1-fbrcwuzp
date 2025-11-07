@@ -128,16 +128,25 @@ const Venue = () => {
       <Train className="w-8 h-8 text-purple-500 mr-4" />
 <h3 className="text-xl font-bold text-gray-800">
   {t("En plus de ces hébergements, vous trouverez une liste d'hôtels et gîtes en cliquant sur ces liens : ")}
-  <a 
-    href="https://docs.google.com/spreadsheets/d/1Lq1iSdBeQrxQgpCXe6neGfdmktHgUYp8/edit?usp=drivesdk&ouid=109733663883909461869&rtpof=true&sd=true" 
-    target="_blank" 
-    rel="noopener noreferrer" 
+  <a
+    href="https://drive.google.com/file/d/14nyB29RFN5M8-3dnVeesNqduQQkH1Inu/view?usp=drivesdk"
+    target="_blank"
+    rel="noopener noreferrer"
     className="text-blue-600 hover:underline"
   >
     PDF
-  </a> 
-  {" - Excel"}
+  </a>
+  {" - "}
+  <a
+    href="https://docs.google.com/spreadsheets/d/1Lq1iSdBeQrxQgpCXe6neGfdmktHgUYp8/edit?usp=drivesdk&ouid=109733663883909461869&rtpof=true&sd=true"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-600 hover:underline"
+  >
+    Excel
+  </a>
 </h3>
+
 
             </div>
     </div>
