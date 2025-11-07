@@ -126,9 +126,19 @@ const Venue = () => {
   <div className="bg-white rounded-2xl p-8 shadow-lg">
     <div className="flex items-center mb-6">
       <Train className="w-8 h-8 text-purple-500 mr-4" />
-      <h3 className="text-xl font-bold text-gray-800">
-                {t("En plus de ces hébergements, vous trouverez une liste d'hôtels et gîtes en cliquant sur ces liens : PDF - Excel")}
-              </h3>
+<h3 className="text-xl font-bold text-gray-800">
+  {t("En plus de ces hébergements, vous trouverez une liste d'hôtels et gîtes en cliquant sur ces liens : ")}
+  <a 
+    href="https://docs.google.com/spreadsheets/d/1Lq1iSdBeQrxQgpCXe6neGfdmktHgUYp8/edit?usp=drivesdk&ouid=109733663883909461869&rtpof=true&sd=true" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="text-blue-600 hover:underline"
+  >
+    PDF
+  </a> 
+  {" - Excel"}
+</h3>
+
             </div>
     </div>
           </div>
