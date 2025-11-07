@@ -108,7 +108,6 @@ const Footer = () => {
             <div className="w-8 h-px bg-gradient-to-l from-transparent via-rose-300 to-transparent"></div>
           </div>
           <p className="text-purple-200 text-sm mt-4 italic">
-            "Le bonheur n’est réel que lors qu’il est partagé – Into the Wild"
           </p>
         </div>
       </div>
