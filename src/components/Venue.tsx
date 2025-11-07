@@ -127,7 +127,7 @@ const Venue = () => {
     <div className="flex items-center mb-6">
       <Train className="w-8 h-8 text-purple-500 mr-4" />
       <h3 className="text-xl font-bold text-gray-800">
-                {t('venue.transport.title')}
+                {t("En plus de ces hébergements, vous trouverez une liste d'hôtels et gîtes en cliquant sur ces liens : PDF - Excel")}
               </h3>
             </div>
     </div>
