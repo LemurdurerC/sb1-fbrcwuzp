@@ -71,7 +71,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <p className="text-purple-100 italic leading-relaxed">
-                "Ensemble, nous écrivons notre plus belle histoire d'amour."
+                "Le bonheur n’est réel que lors qu’il est partagé"
               </p>
               <p className="text-sm text-purple-300">
                 - Simon & Talia
