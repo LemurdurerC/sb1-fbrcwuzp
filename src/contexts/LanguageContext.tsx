@@ -76,7 +76,7 @@ const translations = {
     'rsvp.form.allergies': 'Allergies ou régimes spéciaux',
     'rsvp.form.transport': 'Besoin de transport',
     'rsvp.form.message': 'Message pour les mariés',
-    'rsvp.form.submit': 'Confirmer ma Présence',
+    'rsvp.form.submit': 'Confirmer ma Présence !',
     'rsvp.success': 'Merci pour votre confirmation !',
     
     // Registry
