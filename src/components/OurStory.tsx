@@ -26,7 +26,7 @@ const countries = [
     image: 'https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
     flag: '🇮🇪',
     landmark: '☘️',
-    description: 'Les paysages verts et la culture irlandaise'
+    description: 'Les paysages verts et la culture irlandaisett'
   },
   {
     code: 'UK',
